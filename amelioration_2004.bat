@@ -345,6 +345,7 @@ PowerShell -Command "Get-AppxPackage *MicrosoftEdgeDevToolsClient* | Remove-Appx
 PowerShell -Command "Get-AppxPackage *WindowsPhone* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *YourPhone* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *photos* | Remove-AppxPackage"
+PowerShell -Command "Get-AppxPackage *ScreenSketch* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *SkypeApp* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *solit* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *WindowsSoundRecorder* | Remove-AppxPackage"
