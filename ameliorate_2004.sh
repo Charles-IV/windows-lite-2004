@@ -69,7 +69,8 @@ fi
 # start AME process
 title_bar
 echo "Starting AME process, searching for files..."
-Term=(autologger clipsvc clipup DeliveryOptimization DeviceCensus.exe diagtrack dmclient dosvc EnhancedStorage homegroup hotspot invagent microsoftedge.exe msra sihclient slui startupscan storsvc usoclient usocore windowsmaps windowsupdate wsqmcons wua wus)
+#Term=(autologger clipsvc clipup DeliveryOptimization DeviceCensus.exe diagtrack dmclient dosvc EnhancedStorage homegroup hotspot invagent microsoftedge.exe msra sihclient slui startupscan storsvc usoclient usocore windowsmaps windowsupdate wsqmcons wua wus)
+Term=(autologger clipsvc clipup DeliveryOptimization DeviceCensus.exe diagtrack dmclient dosvc EnhancedStorage homegroup hotspot invagent microsoftedge.exe msra sihclient slui startupscan storsvc windowsmaps wsqmcons)
 touch fzf_list.txt
 for i in "${Term[@]}"
 do
@@ -198,8 +199,8 @@ echo 'rm -rf "Program Files (x86)/Internet Explorer"' | cat - remove.sh > temp &
 #echo 'rm -rf "Program Files (x86)/Windows Defender"' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf "Program Files (x86)/Windows Mail"' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf "Program Files (x86)/Windows Media Player"' | cat - remove.sh > temp && mv temp remove.sh
-echo 'rm -rf Windows/System32/wua*' | cat - remove.sh > temp && mv temp remove.sh
-echo 'rm -rf Windows/System32/wups*' | cat - remove.sh > temp && mv temp remove.sh
+#echo 'rm -rf Windows/System32/wua*' | cat - remove.sh > temp && mv temp remove.sh
+#echo 'rm -rf Windows/System32/wups*' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf Windows/SystemApps/*CloudExperienceHost*' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf Windows/SystemApps/*ContentDeliveryManager*' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf Windows/SystemApps/Microsoft.MicrosoftEdge*' | cat - remove.sh > temp && mv temp remove.sh
