@@ -122,6 +122,7 @@ awk '{ print length($0) " " $0; }' dirs_deduped.txt | sort -n | cut -d ' ' -f 2-
 awk -v quote='"' '{print "mkdir " quote "AME_Backup/" $0 quote}' dirs_sorted.txt > mkdirs.sh
 # adds some needed things
 echo 'mkdir "AME_Backup/Program Files (x86)"' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
+echo 'mkdir "AME_Backup/Program Files (x86)/Microsoft"' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir AME_Backup/Windows/SoftwareDistribution' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir AME_Backup/Windows/InfusedApps' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir AME_Backup/Windows' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
@@ -139,6 +140,8 @@ echo 'cp -fa --preserve=all "Program Files/Internet Explorer" "AME_Backup/Progra
 echo 'cp -fa --preserve=all "Program Files/Windows Defender" "AME_Backup/Program Files/Windows Defender"' | cat - backup.txt > temp && mv temp backup.txt
 echo 'cp -fa --preserve=all "Program Files/Windows Mail" "AME_Backup/Program Files/Windows Mail"' | cat - backup.txt > temp && mv temp backup.txt
 echo 'cp -fa --preserve=all "Program Files/Windows Media Player" "AME_Backup/Program Files/Windows Media Player"' | cat - backup.txt > temp && mv temp backup.txt
+echo 'cp -fa --preserve=all "Program Files (x86)/Microsoft/Edge" "AME_Backup/Program Files (x86)/Microsoft"' | cat - backup.txt > temp && mv temp backup.txt
+echo 'cp -fa --preserve=all "Program Files (x86)/Microsoft/EdgeUpdate" "AME_Backup/Program Files (x86)/Microsoft"' | cat - backup.txt > temp && mv temp backup.txt
 echo 'cp -fa --preserve=all "Program Files (x86)/Internet Explorer" "AME_Backup/Program Files (x86)/Internet Explorer"' | cat - backup.txt > temp && mv temp backup.txt
 echo 'cp -fa --preserve=all "Program Files (x86)/Windows Defender" "AME_Backup/Program Files (x86)/Windows Defender"' | cat - backup.txt > temp && mv temp backup.txt
 echo 'cp -fa --preserve=all "Program Files (x86)/Windows Mail" "AME_Backup/Program Files (x86)/Windows Mail"' | cat - backup.txt > temp && mv temp backup.txt
@@ -166,6 +169,8 @@ echo 'cp -fa --preserve=all "AME_Backup/Program Files/Internet Explorer" "Progra
 echo 'cp -fa --preserve=all "AME_Backup/Program Files/Windows Defender" "Program Files/Windows Defender"' | cat - restore.txt > temp && mv temp restore.txt
 echo 'cp -fa --preserve=all "AME_Backup/Program Files/Windows Mail" "Program Files/Windows Mail"' | cat - restore.txt > temp && mv temp restore.txt
 echo 'cp -fa --preserve=all "AME_Backup/Program Files/Windows Media Player" "Program Files/Windows Media Player"' | cat - restore.txt > temp && mv temp restore.txt
+echo 'cp -fa --preserve=all "AME_Backup/Program Files (x86)/Microsoft/Edge" "Program Files (x86)/Microsoft"' | cat - restore.txt > temp && mv temp restore.txt
+echo 'cp -fa --preserve=all "AME_Backup/Program Files (x86)/Microsoft/EdgeUpdate" "Program Files (x86)/Microsoft"' | cat - restore.txt > temp && mv temp restore.txt
 echo 'cp -fa --preserve=all "AME_Backup/Program Files (x86)/Internet Explorer" "Program Files (x86)/Internet Explorer"' | cat - restore.txt > temp && mv temp restore.txt
 echo 'cp -fa --preserve=all "Program Files (x86)/Windows Defender" "Program Files (x86)/Windows Defender"' | cat - restore.txt > temp && mv temp restore.txt
 echo 'cp -fa --preserve=all "AME_Backup/Program Files (x86)/Windows Mail" "Program Files (x86)/Windows Mail"' | cat - restore.txt > temp && mv temp restore.txt
@@ -195,6 +200,8 @@ echo 'rm -rf "Program Files/Internet Explorer"' | cat - remove.sh > temp && mv t
 #echo 'rm -rf "Program Files/Windows Defender"' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf "Program Files/Windows Mail"' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf "Program Files/Windows Media Player"' | cat - remove.sh > temp && mv temp remove.sh
+echo 'rm -rf "Program Files (x86)/Microsoft/Edge"' | cat - remove.sh > temp && mv temp remove.sh
+echo 'rm -rf "Program Files (x86)/Microsoft/EdgeUpdate"' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf "Program Files (x86)/Internet Explorer"' | cat - remove.sh > temp && mv temp remove.sh
 #echo 'rm -rf "Program Files (x86)/Windows Defender"' | cat - remove.sh > temp && mv temp remove.sh
 echo 'rm -rf "Program Files (x86)/Windows Mail"' | cat - remove.sh > temp && mv temp remove.sh
