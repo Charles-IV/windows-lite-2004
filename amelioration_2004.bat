@@ -567,7 +567,6 @@ timeout /t 1 /nobreak > NUL
 
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "choco install -y --force --allow-empty-checksums vlc 7zip jpegview vcredist-all directx wget"
 
-:: Download and configure OldNewExplorer
 cls
 echo.
 echo  :: Installing Third Party Programs
