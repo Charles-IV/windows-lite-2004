@@ -206,6 +206,38 @@ sc config XboxNetApiSvc start= disabled
 net stop wlidsvc
 sc config wlidsvc start= disabled
 
+:: Chris Titus list of services to disable
+::sc config mpssvc start= disabled
+sc config icssvc start= disabled
+sc config bthserv start= disabled
+:: Spooler is required for printing
+net stop Spooler
+sc config Spooler start= disabled
+sc config Fax start= disabled
+sc config SessionEnv start= disabled
+sc config TermService start= disabled
+sc config wisvc start= disabled
+::sc config seclogon start= disabled
+:: TabletInputService might be needed in virtual machines
+::sc config TabletInputSevice start= disabled 
+sc config CscService start= disabled
+sc config wcncsvc start= disabled
+sc config ALG start= disabled
+sc config SCardSvr start= disabled
+sc config stisvc start= disabled
+::sc config wscsvc start= disabled
+sc config AJRouter start= disabled
+sc config PcaSvc start= disabled
+:: EndAppSvc gets access denied
+::sc config EntAppSvc start= disabled
+
+:: my list of services to disable
+net stop NcbService
+sc config NcbService start= disabled
+:: tempted to disable this - improves security, but may be used by some people
+::net stop LanmanWorkstation
+::sc config LanmanWorkstation
+
 :: Disable SMBv1. Effectively mitigates EternalBlue, popularly known as WannaCry.
 PowerShell -Command "Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force"
 sc config lanmanworkstation depend= bowser/mrxsmb20/nsi
