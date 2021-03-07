@@ -121,9 +121,11 @@ awk '{ print length($0) " " $0; }' dirs_deduped.txt | sort -n | cut -d ' ' -f 2-
 # appends root backup directory
 awk -v quote='"' '{print "mkdir " quote "AME_Backup/" $0 quote}' dirs_sorted.txt > mkdirs.sh
 # adds some needed things
+echo 'mkdir "AME_Backup/Program Files"' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir "AME_Backup/Program Files (x86)"' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir AME_Backup/Windows/SoftwareDistribution' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir AME_Backup/Windows/InfusedApps' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
+echo 'mkdir AME_Backup/Windows/diagnostics' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir AME_Backup/Windows' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo 'mkdir AME_Backup' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
 echo '#!/bin/bash' | cat - mkdirs.sh > temp && mv temp mkdirs.sh
