@@ -339,6 +339,12 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v E
 ::Disable The Lock Screen
 ::reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization" /v NoLockScreen /t REG_DWORD /d 1 /f > NUL 2>&1
 
+:: Remove Chromium based Edge - this will be replaced by the old Edge which is removed later
+cd %PROGRAMFILES(X86)%\Microsoft\Edge\Application\8*\Installer
+setup --uninstall --force-uninstall --system-level
+cd %PROGRAMFILES(X86)%\Microsoft
+rd Edge /Q /S
+
 :: Removing AppXPackages, the ModernUI Apps, including Cortana
 cls
 echo.
